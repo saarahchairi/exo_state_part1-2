@@ -19,21 +19,32 @@ class App extends React.Component {
         nom: "Chairi",
         prenom: "Nisrine",
         age: 19,
-      },
+      }
     };
   }
-  change = (x) => {
+  change = () => {
     this.setState({
-      prenom: x
+      personnage1:{
+        nom: "Chairi",
+        prenom : "Zaza",
+        age: 30,
+      },
+      personnage2:{
+        nom: "Chairi",
+        prenom: "Sam",
+        age: 27,
+      },
+      personnage3:{
+        nom: "Chairi",
+        prenom: "Nis",
+        age: 22,
+      }
     })
   }
   render(){
     return(
       <div>
-        <p>je m'appel {this.state.personnage1.prenom} {this.state.personnage1.nom} et j'ai {this.state.personnage1.age}ans.</p>
-        <Perso prenom={this.state.personnage1} />
-        <Perso prenom={this.state.personnage2} />
-        <Perso prenom={this.state.personnage3} />
+        <Perso name1={this.state.personnage1} name2={this.state.personnage2} name3={this.state.personnage3} onChange={this.change}/>
       </div>
     );
   }
